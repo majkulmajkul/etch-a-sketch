@@ -10,7 +10,7 @@ body{
 
 .sketch-container{
     display: inline-grid;
-    border: 4px solid #354f52;
+
     cursor: crosshair;
     
 }
@@ -24,6 +24,10 @@ body{
     
 }
 
+.pixel:hover{
+    background-color: black;
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
@@ -34,18 +38,41 @@ body{
 .sketch-and-controls{
     display: flex;
     gap: 2rem;
+    align-items: flex-start;
 }
 
 .controls{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-self: stretch;
 }
 
 .control{
     text-align: center;
-    border: 4px solid #354f52;
-    padding: 1rem;
     cursor: pointer;
+    
+    
+}
+
+.control:hover{
+    background-color: #2f3e46;
+    color: #cad2c5;
+}
+
+.control,
+.sketch-container,
+.instructions
+{
+    border: 4px solid #354f52;
+}
+
+.control,
+.instructions {
+    padding: 1rem;
     background-color: #84a98c;
+}
+
+.instructions{
+
 }
