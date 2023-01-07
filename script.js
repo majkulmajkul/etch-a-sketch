@@ -2,6 +2,9 @@ const sketchContainer = document.querySelector(".sketch-container");
 const hiddenDiv = document.querySelector(".hidden-div");
 const rainbowModeButton = document.querySelector("#rainbow-mode-button");
 const resetButton = document.querySelector("#reset-button");
+const changeResolutionButton = document.querySelector(
+  "#change-resolution-button"
+);
 const primaryColorPicker = document.querySelector("#primary-color-picker");
 const backgroundColorPicker = document.querySelector(
   "#background-color-picker"
@@ -29,6 +32,7 @@ backgroundColorPicker.addEventListener("change", (e) =>
 );
 
 resetButton.addEventListener("click", (e) => setupScreen(width));
+changeResolutionButton.addEventListener("click", (e) => changeResolution(e));
 
 let color = "rgb(0, 0, 0)";
 let backgroundColor = "rgb(255, 255, 255)";
@@ -70,6 +74,21 @@ function getColor() {
 function setColorToPixel(targetPixel) {
   if (mouseDown) {
     targetPixel.style.background = getColor();
+  }
+}
+
+function changeResolution() {
+  let resolution = 0;
+  while (resolution < 8 || resolution > 64) {
+    resolution = prompt("Enter new dimension for sketch area: (8 - 64)");
+  }
+
+  setupScreen(resolution);
+  const allPixels = document.querySelectorAll(".pixel");
+  pixelSizeRem = 32 / resolution;
+  for (const pixel of allPixels) {
+    pixel.style.width = `${pixelSizeRem}rem`;
+    pixel.style.height = `${pixelSizeRem}rem`;
   }
 }
 
