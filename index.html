@@ -12,9 +12,27 @@
       <h1>Etch-A-Sketch</h1>
       <div class="sketch-and-controls">
         <div class="controls">
-          <div class="control">Set Color</div>
-          <div class="control">Rainbow Mode</div>
+          <div>
+            <input
+              type="color"
+              id="primary-color-picker"
+              name="primary-color"
+              value="#000000"
+            />
+            <label for="head">Set Color</label>
+          </div>
+          <div>
+            <input
+              type="color"
+              id="background-color-picker"
+              name="background-color"
+              value="#ffffff"
+            />
+            <label for="head">Backgound Color</label>
+          </div>
+          <div class="control" id="rainbow-mode-button">Rainbow Mode</div>
           <div class="control">Set Resolution</div>
+          <div class="control">Reset</div>
         </div>
         <div class="sketch-container"></div>
       </div>

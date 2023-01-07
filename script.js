@@ -1,7 +1,13 @@
 const sketchContainer = document.querySelector(".sketch-container");
+const rainbowModeButton = document.querySelector("#rainbow-mode-button");
+const primaryColorPicker = document.querySelector("#primary-color-picker");
+const backgroundColorPicker = document.querySelector(
+  "#background-color-picker"
+);
 const body = document.querySelector("body");
 
 let mouseDown = false;
+
 body.addEventListener("mousedown", () => {
   mouseDown = true;
 });
@@ -9,7 +15,27 @@ body.addEventListener("mouseup", () => {
   mouseDown = false;
 });
 
-let color = "rainbow";
+rainbowModeButton.addEventListener("click", () => setColor("rainbow"));
+
+primaryColorPicker.addEventListener("input", (e) => setColor(e.target.value));
+primaryColorPicker.addEventListener("change", (e) => setColor(e.target.value));
+backgroundColorPicker.addEventListener("input", (e) =>
+  setBackgroundColor(e.target.value)
+);
+backgroundColorPicker.addEventListener("change", (e) =>
+  setBackgroundColor(e.target.value)
+);
+
+let color = "black";
+let backgroundColor = "white";
+
+function setColor(newColor) {
+  color = newColor;
+}
+
+function setBackgroundColor(newBackgroundColor) {
+  backgroundColor = newBackgroundColor;
+}
 
 function getColor() {
   if (color === "rainbow") {
