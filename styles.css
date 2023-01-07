@@ -1,0 +1,12 @@
+h1{
+    color: red;
+}
+
+.sketch-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pixel{
+    min-width: 1rem;
+}
