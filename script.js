@@ -9,12 +9,16 @@ body.addEventListener("mouseup", () => {
   mouseDown = false;
 });
 
-let color = "blue";
+let color = "rainbow";
 
 function getColor() {
-  if (color === "rgb") {
+  if (color === "rainbow") {
     //to be implemented
-    return undefined;
+
+    let color1 = Math.floor(Math.random() * 255);
+    let color2 = Math.floor(Math.random() * 255);
+    let color3 = Math.floor(Math.random() * 255);
+    return `rgb(${color1}, ${color2}, ${color3})`;
   } else {
     return color;
   }
@@ -32,7 +36,6 @@ function setupScreen(width) {
 
   for (let i = 0; i < width * width; i++) {
     let child = document.createElement("div");
-    // child.textContent = "x";
     child.className = "pixel";
     sketchContainer.appendChild(child);
   }
