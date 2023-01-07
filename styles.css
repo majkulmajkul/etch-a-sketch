@@ -3,10 +3,15 @@ h1{
 }
 
 .sketch-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: inline-grid;
+    border: 1px solid black;
 }
 
 .pixel{
-    min-width: 1rem;
+    width: 1rem;
+    height: 1rem;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    margin: 0;
+    
 }
