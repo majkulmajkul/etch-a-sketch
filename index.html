@@ -5,14 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <title>Etch-A-Sketch</title>
   </head>
   <body>
     <div class="main-container">
-      <h1>Etch-A-Sketch</h1>
+      <h1 class="main-title">Etch-A-Sketch</h1>
       <div class="sketch-and-controls">
         <div class="controls">
-          <div>
+          <div class="control">
             <input
               type="color"
               id="primary-color-picker"
@@ -21,7 +27,7 @@
             />
             <label for="primary-color-picker">Set Color</label>
           </div>
-          <div>
+          <div class="control">
             <input
               type="color"
               id="background-color-picker"
